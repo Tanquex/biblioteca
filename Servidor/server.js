@@ -23,10 +23,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'samael',
-  database: 'Biblioteca'
+  host: 'bsvsgvnfssq0ladact5t-mysql.services.clever-cloud.com',
+  user: 'u1uksrwrolxilnqd',
+  password: 'xR3ZxR12VVXkbFy1xXey',
+  database: 'bsvsgvnfssq0ladact5t'
 };
 
 const pool = mysql.createPool(dbConfig);
