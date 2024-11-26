@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'new-book', component: NewBooksComponent, canActivate: [AuthGuard]  },
   {path: 'EditBook', component:EditBooksComponent, canActivate: [AuthGuard] },
   {path: 'multas', component: MultasComponent, canActivate: [AuthGuard] },
-  {path: 'registro', component: RegistroBibiotecariosComponent, canActivate: [AuthGuard] },
+  {path: 'registro', component: RegistroBibiotecariosComponent },
   {path: 'lector', component: RegistroLectorComponent, canActivate: [AuthGuard] },
   {path: 'personalizado', component: PersonalisadoComponent, canActivate: [AuthGuard] },
   { path: 'mapa', component: MapaComponent, canActivate: [AuthGuard] },
