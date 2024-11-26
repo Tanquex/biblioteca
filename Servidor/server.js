@@ -15,10 +15,14 @@ const upload = multer({
   },
 });
 
+const corsOptions = {
+  origin: 'https://biblioteca-front-9gme.onrender.com', // Reemplaza con tu dominio de CloudFront
+  optionsSuccessStatus: 200
+};
 
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
