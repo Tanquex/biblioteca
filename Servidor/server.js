@@ -15,16 +15,32 @@ const upload = multer({
   },
 });
 
-const corsOptions = {
-  origin: 'https://biblioteca-front-9gme.onrender.com', // Reemplaza con tu dominio de CloudFront
-  optionsSuccessStatus: 200
-};
+const allowedOrigins = [
+  'https://biblioteca-front-9gme.onrender.com',
+  'https://d2l31qkx2rm6ft.cloudfront.net'];
 
+// const corsOptions = {
+//   origin: 'https://biblioteca-front-9gme.onrender.com', 'https://d2l31qkx2rm6ft.cloudfront.net',// Reemplaza con tu dominio de CloudFront
+//   optionsSuccessStatus: 200
+// };
+
+app.use(cors({
+  origin: function (origin, callback) {
+  // Permitir solicitudes sin origen (como Postman)
+  if (!origin) return callback(null,true);
+  if (allowedOrigins.indexof(origin) ===-1){
+  const msg = 'El origen ' + origin +' no está permitido';
+  return callback(new Error(msg), false);
+  }
+  return callback(null, true);
+  }
+}));
 
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 const dbConfig = {
   host: 'bsvsgvnfssq0ladact5t-mysql.services.clever-cloud.com',
