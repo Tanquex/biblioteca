@@ -15,7 +15,7 @@ const upload = multer({
   },
 });
 
-const allowedOrigins = [
+const corsOptions = [
   'https://biblioteca-front-9gme.onrender.com',
   'https://d2l31qkx2rm6ft.cloudfront.net'];
 
