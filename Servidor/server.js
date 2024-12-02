@@ -20,12 +20,12 @@ const upload = multer({
 //   'https://d2l31qkx2rm6ft.cloudfront.net'];
 
 const corsOptions = {
-  origin: 'https://d2l31qkx2rm6ft.cloudfront.net',// Reemplaza con tu dominio de CloudFront
+  //origin: 'https://d2l31qkx2rm6ft.cloudfront.net', Reemplaza con tu dominio de CloudFront
   optionsSuccessStatus: 200
 };
 
 app.use(cors({
-  origin: 'https://d2l31qkx2rm6ft.cloudfront.net',
+  //origin: 'https://d2l31qkx2rm6ft.cloudfront.net',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
